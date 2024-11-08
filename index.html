@@ -6,6 +6,7 @@
     <title>T.P Historia</title>
     <link rel="icon" href="icon.png">
     <style>
+
         /* Fondo por defecto para pantallas grandes */
         body {
             background-image: url('Fondo.png');
@@ -18,29 +19,40 @@
             }
         }
 
+        /* Contenedor del texto superior */
+        .top-text {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s ease-out forwards;
+            animation-delay: 0.1s; /* Asegura que el texto superior aparezca primero */
+        }
+
         /* Contenedor de la cuadrícula */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas grandes */
-            gap: 30px; /* Espacio entre las imágenes */
-            max-width: 800px; /* Ajuste el tamaño máximo */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Estilo de las imágenes */
         .grid-item figure {
-            margin: 0; /* Elimina el margen del figure */
+            margin: 0;
         }
 
         .grid-item img {
-            width: 100%; /* Ajusta el ancho al 100% del contenedor */
+            width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0; /* Comienza invisible */
-            transform: translateY(50px); /* Comienza desplazada hacia abajo */
-            animation: slideUp 0.8s ease-out forwards; /* Aplicar animación */
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s ease-out forwards;
         }
 
         /* Delay para cada imagen */
@@ -50,56 +62,57 @@
         .grid-item:nth-child(4) img { animation-delay: 0.8s; }
         .grid-item:nth-child(5) img { animation-delay: 1s; }
 
-        /* Animación que hace que las imágenes suban y aparezcan */
+        /* Animación que hace que las imágenes y el texto suban y aparezcan */
         @keyframes slideUp {
             to {
-                opacity: 1; /* Aparecen completamente */
-                transform: translateY(0); /* Se posicionan en su lugar */
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Animación para el texto debajo de las imágenes */
+        /* Animación específica para el texto debajo de cada imagen */
         @keyframes slideTextUp {
             to {
-                opacity: 1; /* El texto se vuelve visible */
-                transform: translateY(0); /* El texto se mueve a su lugar */
-            }
-        }
-
-        /* Cambios para pantallas móviles */
-        @media only screen and (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr; /* Una sola columna en móviles */
-                gap: 15px; /* Reduce el espacio entre las imágenes */
-                max-width: 100%; /* Utiliza el 100% del ancho de la pantalla */
-                padding: 10px;
-            }
-
-            .grid-item img {
-                max-width: 100%; /* Asegura que las imágenes no sobrepasen el contenedor */
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         /* Estilo para el texto debajo de cada imagen */
         figcaption {
-            text-align: center; /* Centra el texto */
-            font-size: 16px; /* Tamaño de fuente */
-            margin-top: 8px; /* Espacio entre la imagen y el texto */
-            color: #333; /* Color del texto */
-            opacity: 0; /* Comienza invisible */
-            transform: translateY(50px); /* Comienza desplazado hacia abajo */
-            animation: slideTextUp 0.8s ease-out forwards; /* Animación para el texto */
+            text-align: center;
+            font-size: 16px;
+            margin-top: 8px;
+            color: #333;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideTextUp 0.8s ease-out forwards;
         }
 
-        /* Delay para el texto de cada imagen */
-        .grid-item:nth-child(1) figcaption { animation-delay: 0.2s; }
-        .grid-item:nth-child(2) figcaption { animation-delay: 0.4s; }
-        .grid-item:nth-child(3) figcaption { animation-delay: 0.6s; }
-        .grid-item:nth-child(4) figcaption { animation-delay: 0.8s; }
-        .grid-item:nth-child(5) figcaption { animation-delay: 1s; }
+        /* Delay para el texto debajo de cada imagen */
+        .grid-item:nth-child(1) figcaption { animation-delay: 0.3s; }
+        .grid-item:nth-child(2) figcaption { animation-delay: 0.5s; }
+        .grid-item:nth-child(3) figcaption { animation-delay: 0.7s; }
+        .grid-item:nth-child(4) figcaption { animation-delay: 0.9s; }
+        .grid-item:nth-child(5) figcaption { animation-delay: 1.1s; }
+
+        /* Cambios para pantallas móviles */
+        @media only screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                max-width: 100%;
+                padding: 10px;
+            }
+
     </style>
 </head>
 <body>
+    <div class="top-text">
+        <center><h2><u>"Feudalismo":</u></h2></center>
+        <center><h2><u>*Es el régimen político, económico y social que se desarrolló en Europa durante la Edad Media,</u></h2></center>
+        <h2><u>entre los siglos IX y XIII (9-14), de igual manera por la conformación de estructuras de poder descentralizado.</u></h2>
+    </div>
 
     <div class="grid-container">
         <div class="grid-item">
@@ -113,7 +126,7 @@
         <div class="grid-item">
             <a href="Economia feudal.html">
                 <figure>
-                    <img src="economiafeudal.png" alt="Enlace a hell">
+                    <img src="economiafeudal.png" alt="Enlace a economía feudal">
                     <figcaption>Economía Feudal</figcaption>
                 </figure>
             </a>
@@ -121,7 +134,7 @@
         <div class="grid-item">
             <a href="Señorio feudal.html">
                 <figure>
-                    <img src="FFP.png" alt="Enlace a hell">
+                    <img src="FFP.png" alt="Enlace a señorío feudal">
                     <figcaption>Señorío feudal</figcaption>
                 </figure>
             </a>
@@ -129,7 +142,7 @@
         <div class="grid-item">
             <a href="Sociedad feudal.html">
                 <figure>
-                    <img src="sociedad feudal.png" alt="Enlace a hell">
+                    <img src="sociedad feudal.png" alt="Enlace a sociedad feudal">
                     <figcaption>Sociedad Feudal</figcaption>
                 </figure>
             </a>
@@ -143,7 +156,5 @@
             </a>
         </div>
     </div>
-
 </body>
 </html>
-
